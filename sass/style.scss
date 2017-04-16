@@ -108,6 +108,7 @@ html, body {
 .content {
   background-color: #dcdcdc;
   padding: 10px;
+  overflow: hidden;
 }
 
 .title {
@@ -116,6 +117,10 @@ html, body {
     family: $font;
     size: 1.5em;
   }
+}
+
+.arhiv-img {
+  width: 100%;
 }
 //====================================FOOTER
 .footer {

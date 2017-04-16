@@ -132,12 +132,16 @@ html, body {
 
 .content {
   background-color: #dcdcdc;
-  padding: 10px; }
+  padding: 10px;
+  overflow: hidden; }
 
 .title {
   padding: 10px;
   font-family: Arial, sans-serif;
   font-size: 1.5em; }
+
+.arhiv-img {
+  width: 100%; }
 
 .footer {
   display: flex;
