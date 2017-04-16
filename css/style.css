@@ -1,0 +1,151 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html, body {
+  width: 100%;
+  min-height: 100%; }
+
+.language-list {
+  display: flex;
+  justify-content: space-around;
+  padding: 5px; }
+
+.language-list__link {
+  display: flex;
+  height: 40px;
+  width: 40px;
+  background: url(../img/sprite-icon.png);
+  background-size: cover; }
+
+.language-list__link--ru {
+  background-position-x: -43px; }
+
+.language-list__link--usa {
+  background-position-x: -87px; }
+
+.language-list__link--print {
+  background-position-x: -128px; }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  min-height: 200px;
+  background: url(../img/header-back.jpg);
+  background-size: cover;
+  padding: 10px 20px; }
+
+.heading {
+  position: relative;
+  right: 0;
+  text-align: right; }
+
+.heading__logo {
+  font-family: Arial, sans-serif;
+  font-size: 2.5em;
+  color: aliceblue; }
+
+.heading__subtitle {
+  font-family: Arial, sans-serif;
+  font-size: 0.8em;
+  color: aliceblue; }
+
+.nav__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.nav__item {
+  width: 100%;
+  border-top: 1px solid;
+  border-right: 1px solid;
+  border-left: 1px solid;
+  border-color: #686669; }
+
+.nav__item:last-child {
+  border-bottom: 1px solid #686669; }
+
+.nav__link {
+  display: block;
+  text-align: center;
+  padding: 8px;
+  text-decoration: none;
+  color: aliceblue;
+  font-family: Arial, sans-serif;
+  font-size: 1.2em;
+  background: #696866;
+  background: -moz-linear-gradient(top, #696866 0%, #a89fa0 32%, #a89fa0 100%);
+  background: -webkit-linear-gradient(top, #696866 0%, #a89fa0 32%, #a89fa0 100%);
+  background: -o-linear-gradient(top, #696866 0%, #a89fa0 32%, #a89fa0 100%);
+  background: -ms-linear-gradient(top, #696866 0%, #a89fa0 32%, #a89fa0 100%);
+  background: linear-gradient(to bottom, #696866 0%, #a89fa0 32%, #a89fa0 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#696866', endColorstr='#a89fa0', GradientType=0); }
+
+.content {
+  background-color: #dcdcdc;
+  padding: 10px; }
+
+.title {
+  padding: 10px;
+  font-family: Arial, sans-serif;
+  font-size: 1.5em; }
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 10px; }
+
+.developer-post {
+  padding-top: 20px;
+  font-family: Arial, sans-serif;
+  font-size: .6em; }

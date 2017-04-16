@@ -1,0 +1,28 @@
+{
+  "name": "zemlyaki",
+  "version": "1.0.0",
+  "description": "zemlyaki-chernobyl.kiev.ua",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Bokhanchenko/bokhanchenko.github.io.git"
+  },
+  "author": "Bokhanchenko.Dm",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bokhanchenko/bokhanchenko.github.io/issues"
+  },
+  "homepage": "https://github.com/Bokhanchenko/bokhanchenko.github.io#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.8",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0",
+    "install": "^0.8.7"
+  },
+  "dependencies": {
+    "gulp": "^3.9.1"
+  }
+}
