@@ -2,29 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="img/favicon.ico"/>
     <title>Zemlyaki</title>
-    <link rel="stylesheet" href="css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <div class="wrapper">
     <header class="header">
         <div class="heading">
-            <p class="heading__logo">Земляки</p>
-            <p class="heading__subtitle">Громадська організація інвалідів-чорнобильців</p>
+            <img class="heading__logo" src="img/uncoloured-rose-md-min.png" alt="logo">
+            <div class="heading__title-container title-container">
+                <p class="title-container__title">Земляки</p>
+                <p class="title-container__subtitle">Громадська організація інвалідів-чорнобильців</p>
+            </div>
         </div>
         <div class="language-container">
             <ul class="language-list">
-                <li class="language-list__itam"><a href="" class="language-list__link"></a></li>
-                <li class="language-list__itam"><a href="" class="language-list__link language-list__link--ru"></a></li>
-                <li class="language-list__itam"><a href="" class="language-list__link language-list__link--usa"></a></li>
-                <li class="language-list__itam"><a href="" class="language-list__link language-list__link--print"></a></li>
+                <li class="language-list__item"><a href="" class="language-list__link"></a></li>
+                <li class="language-list__item"><a href="" class="language-list__link language-list__link--ru"></a></li>
+                <li class="language-list__item"><a href="" class="language-list__link language-list__link--usa"></a>
+                </li>
+                <li class="language-list__item"><a href="" class="language-list__link language-list__link--print"></a>
+                </li>
             </ul>
         </div>
     </header>
     <nav class="nav">
         <ul class="nav__list">
-            <li class="nav__item"><a href="#" class="nav__link">Головна</a></li>
+            <li class="nav__item"><a href="#" class="nav__link nav__link--checked">Головна</a></li>
             <li class="nav__item"><a href="#" class="nav__link">Про нас</a></li>
             <li class="nav__item"><a href="#" class="nav__link">Про Чорнобильську трагедію</a></li>
             <li class="nav__item"><a href="#" class="nav__link">Діяльність</a></li>
@@ -34,17 +40,46 @@
         </ul>
     </nav>
     <div class="content">
-        <p class="title">Громадська організація інвалідів-чорнобильців "Земляки"</p>
-        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, commodi cum dicta dolores doloribus error et harum laudantium modi natus nobis placeat possimus repudiandae sapiente, suscipit, totam veritatis vitae? Ea. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus aut culpa expedita fugit repellendus unde voluptatum. Dignissimos, earum fugiat! Assumenda consequuntur ducimus enim eum facilis fugiat minima perferendis sequi!  </p>
+        <p class="content__title">Громадська організація Інвалідів-чорнобильців "Земляки"</p>
+        <p class="content__sub-title">Наша місія:</p><br>
+        <p class="content__text">Морально психологічна, медична, оздоровча, соціальна і матеріальна допомога потерпілим
+            від Чорнобильської катастрофи 26 квітня 1986 року, а також надання всебічної допомоги в розвитку і
+            реалізації творчих здібностей, талантів, підтримка вдів, дітей-сиріт, інвалідів Чорнобиля.</p><br>
+        <p class="content__sub-title">Трохи історії:</p><br>
+        <p class="content__text">Аварія на Чорнобильській атомній електростанції, визнана світовим співтовариством
+            наймасштабнішої техногенної та екологічної катастрофою за всю історію людства на Землі.</p>
+        <p class="content__text">Вибух на 4-му енергоблоці стався з викидом великої кількості радіоактивних речовин в
+            навколишнє середовище і склав понад 50 мільйонів кюрі, що рівнозначно наслідкам вибухів понад 500 атомних
+            бомб, скинутих в 1945 році на японське місто Хіросіму.</p>
+        <p class="content__text">Місто - супутник ЧАЕС - Прип'ять - став епіцентром Чорнобильської катастрофи. 26-27
+            квітня 1986 року, кожен прип'ятчанин отримав дозу опромінення в 20 000 разів більше норми аварійного
+            опромінення для населення, прийнятої в СРСР до Чорнобиля і в 95 000 разів більше норми, прийнятої в США і
+            Європі. До сих пір і в далекому майбутньому (більш 300 років) Прип'ять залишиться самої забрудненою
+            територією в 30-км зоні аварії на ЧАЕС.</p><br>
+        <p class="content__sub-title">Про творців:</p><br>
+        <p class="content__text">У 1987 році у відповідь на жахливу екологічну трагедію групою прип'ятчан - ентузіастів
+            був заснований Клуб «Земляки», який через кілька років офіційно зареєстрований в громадську благодійну
+            організацію. Сьогодні «Земляки» об'єднують понад тисячу членів, з якими працюють активісти - близько 15
+            волонтерів.</p><br>
+        <p class="content__sub-title">Ми допомагаємо:
+        <p>
+             
+        <p class="content__text">У Деснянський район міста Києва евакуйовано в 1986 році понад 40 тисяч переселенців з
+            міст Прип'ять, Чорнобиль та населених пунктів 30-км зони відчуження. Ці люди з покаліченими долями,
+            безповоротно підірваним здоров'ям, з хворими дітьми на руках постійно ведуть боротьбу за виживання в
+            державі, байдужому до їх проблем і бід. Наша організація надає допомогу евакуйованим жителям, ліквідаторам
+            наслідків аварії на ЧАЕС, багатодітним сім'ям, а також вдовам і дітям-сиротам, інвалідам, яких з кожним днем
+            ​​все більше.</p><br>
     </div>
     <footer class="footer">
         <div class="contacts-link">
-            <p>Контакты:</p>
-            <p>Телефоны:</p>
-            <p>Почта:</p>
+            <p class="contacts-link__title">Контакти:</p>
+            <p class="contacts-link__phones">Телефони: +38-044-547-72-79, +38-044-534-43-32</p>
+            <p class="contacts-link__mail">Пошта: zemlyaki_pripyat@ukr.net</p>
         </div>
         <div class="developer-post">
-           <p>Розробник сайту bokhanchenko.dm@gmail.com</p>
+            <p class="developer-post__title">Розробник сайту:&nbsp;</p>
+            <p class="developer-post__mail">bokhanchenko.dm@gmail.com</p>
         </div>
     </footer>
 </div>
