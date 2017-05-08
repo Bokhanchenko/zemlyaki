@@ -150,18 +150,24 @@ body {
 .language-list__link {
   display: flex;
   height: 40px;
-  width: 40px;
-  background: url(../img/sprite-icon.png);
+  width: 42px;
+  background: url(../img/sprite-icon.png) 2px;
   background-size: cover; }
 
 .language-list__link--ru {
-  background-position-x: -43px; }
+  background-position-x: -42px; }
 
 .language-list__link--usa {
-  background-position-x: -87px; }
+  background-position-x: -85px; }
+
+.language-list__link--vk {
+  background-position: -170px; }
+
+.language-list__link--fb {
+  background-position: -212px; }
 
 .language-list__link--print {
-  background-position-x: -128px; }
+  background-position-x: -127px; }
 
 @media print {
   .language-list {
