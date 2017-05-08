@@ -253,6 +253,12 @@ body {
   font-size: 1.5em;
   font-weight: bold; }
 
+@media print {
+  .content__title {
+    font-family: Arial, sans-serif;
+    font-size: 1em;
+    font-weight: bold; } }
+
 .content__sub-title {
   font-family: Arial, sans-serif;
   font-size: 1em;
