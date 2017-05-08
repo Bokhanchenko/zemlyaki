@@ -56,8 +56,8 @@ body {
   max-width: 960px;
   margin: auto;
   min-height: 100vh;
-  //display: flex;
-  //flex-direction: column;
+  display: flex;
+  flex-direction: column;
   -webkit-box-shadow: 0 0 28px 2px rgba(0,0,0,0.75);
   -moz-box-shadow: 0 0 28px 2px rgba(0,0,0,0.75);
   box-shadow: 0 0 28px 2px rgba(0,0,0,0.75);
@@ -78,6 +78,10 @@ body {
   @include media-m {
     min-height: 400px;
   }
+  @media print {
+    min-height: 150px;
+    background: none;
+  }
 }
 
 .heading {
@@ -94,7 +98,7 @@ body {
   .title-container {
     &__title {
       display: block;
-      margin: .6em 0;
+      margin: .4em 0;
       text-align: right;
       font: {
         family: $font;
@@ -104,8 +108,14 @@ body {
       color: aliceblue;
       text-shadow: 1px 1px 5px #000000;
       @include media-m {
+        margin: .6em 0;
+      }
+      @include media-m {
         font-size: 5em;
         margin: .4em 0;
+      }
+      @media print{
+        color: black;
       }
     }
     &__subtitle {
@@ -119,6 +129,9 @@ body {
       text-shadow: 1px 1px 6px #000000;
       @include media-m {
         font-size: 1.2em;
+      }
+      @media print{
+        color: black;
       }
     }
   }
@@ -144,6 +157,9 @@ body {
     &--print {
       background-position-x: -128px;
     }
+  }
+  @media print{
+    display: none;
   }
 }
 
@@ -215,6 +231,9 @@ body {
       box-shadow: inset 0 0 10px 1px rgba(0,0,0,0.75);
     }
   }
+  @media print {
+    display: none;
+  }
 }
 
 //==================================CONTENT
@@ -222,6 +241,7 @@ body {
   background-color: #dcdcdc;
   padding: 10px;
   overflow: hidden;
+  flex: 1 0 auto;
   &__title {
     padding: 20px 0;
     font: {
@@ -255,6 +275,7 @@ iframe{
 
 //====================================FOOTER
 .footer {
+  flex: 0 0 auto;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -262,6 +283,9 @@ iframe{
   background-color: #a79e9f;
   @include media-s {
     flex-direction: row;
+  }
+  @media print {
+    display: none;
   }
 }
 

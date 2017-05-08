@@ -62,6 +62,8 @@ body {
   max-width: 960px;
   margin: auto;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   -webkit-box-shadow: 0 0 28px 2px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0 0 28px 2px rgba(0, 0, 0, 0.75);
   box-shadow: 0 0 28px 2px rgba(0, 0, 0, 0.75); }
@@ -83,6 +85,11 @@ body {
   .header {
     min-height: 400px; } }
 
+@media print {
+  .header {
+    min-height: 150px;
+    background: none; } }
+
 .heading {
   display: flex;
   justify-content: space-between; }
@@ -98,7 +105,7 @@ body {
 
 .heading .title-container__title {
   display: block;
-  margin: .6em 0;
+  margin: .4em 0;
   text-align: right;
   font-family: Arial, sans-serif;
   font-size: 3em;
@@ -108,8 +115,16 @@ body {
 
 @media screen and (min-width: 768px) {
   .heading .title-container__title {
+    margin: .6em 0; } }
+
+@media screen and (min-width: 768px) {
+  .heading .title-container__title {
     font-size: 5em;
     margin: .4em 0; } }
+
+@media print {
+  .heading .title-container__title {
+    color: black; } }
 
 .heading .title-container__subtitle {
   text-align: right;
@@ -122,6 +137,10 @@ body {
 @media screen and (min-width: 768px) {
   .heading .title-container__subtitle {
     font-size: 1.2em; } }
+
+@media print {
+  .heading .title-container__subtitle {
+    color: black; } }
 
 .language-list {
   display: flex;
@@ -143,6 +162,10 @@ body {
 
 .language-list__link--print {
   background-position-x: -128px; }
+
+@media print {
+  .language-list {
+    display: none; } }
 
 .nav__list {
   display: flex;
@@ -214,10 +237,15 @@ body {
   -moz-box-shadow: inset 0 0 10px 1px rgba(0, 0, 0, 0.75);
   box-shadow: inset 0 0 10px 1px rgba(0, 0, 0, 0.75); }
 
+@media print {
+  .nav {
+    display: none; } }
+
 .content {
   background-color: #dcdcdc;
   padding: 10px;
-  overflow: hidden; }
+  overflow: hidden;
+  flex: 1 0 auto; }
 
 .content__title {
   padding: 20px 0;
@@ -242,6 +270,7 @@ iframe {
   width: 100%; }
 
 .footer {
+  flex: 0 0 auto;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -251,6 +280,10 @@ iframe {
 @media screen and (min-width: 480px) {
   .footer {
     flex-direction: row; } }
+
+@media print {
+  .footer {
+    display: none; } }
 
 .contacts-link {
   margin-bottom: 20px; }
