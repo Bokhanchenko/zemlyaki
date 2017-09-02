@@ -2,6 +2,9 @@
   display: flex;
   justify-content: space-around;
   padding: 5px;
+  &__item {
+    list-style: none;
+  }
   &__link {
     display: flex;
     height: 40px;

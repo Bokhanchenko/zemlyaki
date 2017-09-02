@@ -12,7 +12,7 @@ html {
 body {
   width: 100%;
   min-height: 100vh;
-  background: url("../img/back-gener-2.jpg") no-repeat center center;
+  background: url("../img/back-gener-2.jpg") no-repeat center center fixed;
   background-size: cover;
 }
 
@@ -147,6 +147,10 @@ body {
   -ms-flex-pack: distribute;
   justify-content: space-around;
   padding: 5px;
+}
+
+.language-list__item {
+  list-style: none;
 }
 
 .language-list__link {
