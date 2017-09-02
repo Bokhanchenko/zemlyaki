@@ -1,0 +1,73 @@
+//=====================================HEADER
+.header {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  min-height: 200px;
+  background: url(../img/header-background.jpg);
+  background-size: cover;
+  padding: 10px 20px;
+  @include media-s {
+    background-position: center 20%;
+  }
+  @include media-m {
+    min-height: 400px;
+  }
+  @media print {
+    min-height: 150px;
+    background: none;
+  }
+}
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+  &__logo {
+    width: 14%;
+    align-self: flex-start;
+    @include media-m {
+      width: 25%;
+      margin: 20px 10px;
+    }
+  }
+  .title-container {
+    &__title {
+      display: block;
+      margin: .4em 0;
+      text-align: right;
+      font: {
+        family: $font;
+        size: 3em;
+        weight: bold;
+      }
+      color: aliceblue;
+      text-shadow: 1px 1px 5px #000000;
+      @include media-m {
+        margin: .6em 0;
+      }
+      @include media-m {
+        font-size: 5em;
+        margin: .4em 0;
+      }
+      @media print{
+        color: black;
+      }
+    }
+    &__subtitle {
+      text-align: right;
+      font: {
+        family: $font;;
+        size: .8em;
+        weight: bold;
+      }
+      color: aliceblue;
+      text-shadow: 1px 1px 6px #000000;
+      @include media-m {
+        font-size: 1.2em;
+      }
+      @media print{
+        color: black;
+      }
+    }
+  }
+}

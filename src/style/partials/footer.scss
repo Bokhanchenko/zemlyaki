@@ -1,0 +1,64 @@
+.footer {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 10px;
+  background-color: #a79e9f;
+  @include media-s {
+    flex-direction: row;
+  }
+  @media print {
+    display: none;
+  }
+}
+
+.contacts-link {
+  margin-bottom: 20px;
+  @include media-s {
+    width: 56%;
+    margin-bottom: 0;
+  }
+  &__title {
+    font: {
+      family: $font;
+      size: .8em;
+      weight: bold;
+    }
+  }
+  &__phones {
+    font: {
+      family: $font;
+      size: .7em;
+    }
+  }
+  &__mail {
+    font: {
+      family: $font;
+      size: .7em;
+    }
+  }
+}
+
+.developer-post {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @include media-m {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+  &__title{
+    font: {
+      family: $font;
+      size: .6em;
+      weight: bold;
+    }
+  }
+  &__mail {
+    font: {
+      family: $font;
+      size: .6em;
+    }
+  }
+}

@@ -1,0 +1,51 @@
+.content {
+  background-color: #dcdcdc;
+  padding: 40px 10px;
+  overflow: hidden;
+  flex: 1 0 auto;
+  &__title {
+    padding: 20px 0;
+    font: {
+      family: $font;
+      size: 1.5em;
+      weight: bold;
+    }
+    @media print {
+      font: {
+        family: $font;
+        size: 1em;
+        weight: bold;
+      }
+    }
+  }
+  &__sub-title {
+    font: {
+      family: $font;
+      size: 1em;
+      weight: bold;
+    }
+    &--comments {
+      font: {
+        family: $font;
+        size: 1em;
+        weight: 500;
+      }
+    }
+  }
+  &__text {
+    text-indent: 1.5em;
+  }
+  &__list {
+    padding-left: 40px;
+  }
+  &__clear-list {
+    list-style: none;
+  }
+  &__num-list {
+    margin-left: 40px;
+  }
+}
+
+iframe{
+  width: 100%;
+}

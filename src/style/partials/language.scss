@@ -1,0 +1,30 @@
+.language-list {
+  display: flex;
+  justify-content: space-around;
+  padding: 5px;
+  &__link {
+    display: flex;
+    height: 40px;
+    width: 42px;
+    background: url(../img/sprite-icon.png) 2px;
+    background-size: cover;
+    &--ru {
+      background-position-x: -42px;
+    }
+    &--usa {
+      background-position-x: -85px;
+    }
+    &--vk {
+      background-position: - 170px;
+    }
+    &--fb {
+      background-position: -212px;
+    }
+    &--print {
+      background-position-x: -127px;
+    }
+  }
+  @media print{
+    display: none;
+  }
+}
