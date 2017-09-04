@@ -39,7 +39,7 @@ const gulp = require('gulp'),
 
 const paths = {
     src: {
-        html: 'src/*.html',
+        html: 'src/**/*.html',
         style: 'src/style/style.scss',
         js: 'src/js/**/*.js',
         img: 'src/img/**/*.*',
