@@ -126,6 +126,7 @@ let gulp = require( 'gulp')
     ,useref = require( 'gulp-useref')
     ,htmlmin = require( 'gulp-htmlmin')
     ,plumber = require( 'gulp-plumber')
+    ,gm = require('gulp-gm')
     ,watch = require( 'gulp-watch')
     ,prefixer = require( 'gulp-autoprefixer')
     ,uglify = require( 'gulp-uglify')
@@ -151,9 +152,9 @@ let path = {
     },
     src: {
         html: 'src/**/*.html',
-        js: 'src/js/*.js',
+        js: 'src/js/**/*.js',
         style: 'src/style/*.scss',
-        img: 'src/img/**/*.+(jpeg|jpg|png|tiff|webp|svg)',
+        img: 'src/img/**/*.+(jpeg|jpg|JPG|png|tiff|webp|svg)',
         fonts: 'src/fonts/**/*.*'
     },
     watch: {
@@ -230,12 +231,16 @@ gulp.task( 'style:build', function () {
 gulp.task('image:build', function () {
     gulp.src( path.src.img)
         .pipe( plumber())
-        .pipe(imageResize({
-            width: 1280,
-            height: 800,
-            crop: true,
-            upscale: false
-        }))
+        // .pipe(gm((gmfile)=> {
+        //
+        //     return gmfile.resize(100, 100);
+        //
+        // }))
+        // .pipe(imageResize({
+        //     width: 1280,
+        //     crop: true,
+        //     upscale: false
+        // }))
         .pipe( gulp.dest( path.build.img))
         .pipe( reload( { stream: true}));
 });
