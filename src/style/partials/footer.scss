@@ -4,7 +4,7 @@
   justify-content: space-between;
   flex-direction: column;
   padding: 10px;
-  background-color: #a79e9f;
+  background-color: $greyLight;
   @include media-s {
     flex-direction: row;
   }

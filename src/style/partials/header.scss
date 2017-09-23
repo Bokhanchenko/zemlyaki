@@ -40,8 +40,8 @@
         size: 3em;
         weight: bold;
       }
-      color: aliceblue;
-      text-shadow: 1px 1px 5px #000000;
+      color: $wightTextColor;
+      text-shadow: $textShadowHead;
       @include media-m {
         margin: .6em 0;
       }
@@ -50,7 +50,7 @@
         margin: .4em 0;
       }
       @media print{
-        color: black;
+        color: $black;
       }
     }
     &__subtitle {
@@ -61,12 +61,12 @@
         weight: bold;
       }
       color: aliceblue;
-      text-shadow: 1px 1px 6px #000000;
+      text-shadow: $textShadowHead;
       @include media-m {
         font-size: 1.2em;
       }
       @media print{
-        color: black;
+        color: $black;
       }
     }
   }
