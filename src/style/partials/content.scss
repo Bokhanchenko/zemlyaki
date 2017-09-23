@@ -1,11 +1,11 @@
 .content {
-  background-color: #dcdcdc;
+  background-color: $wightBack;
   padding: 40px 20px;
   overflow: hidden;
   flex: 1 0 auto;
-  -webkit-box-shadow: inset 0px 0px 13px 6px rgba(0,0,0,0.76);
-  -moz-box-shadow: inset 0px 0px 13px 6px rgba(0,0,0,0.76);
-  box-shadow: inset 0px 0px 13px 6px rgba(0,0,0,0.76);
+  -webkit-box-shadow: $boxShadow;
+  -moz-box-shadow: $boxShadow;
+  box-shadow: $boxShadow;
   &__title {
     padding: 20px 0;
     font: {
@@ -50,10 +50,13 @@
   &__img {
     display: block;
     margin: 20px auto;
-    width: 40%;
-    -webkit-box-shadow: 0px 0px 13px 6px rgba(0,0,0,0.76);
-    -moz-box-shadow: 0px 0px 13px 6px rgba(0,0,0,0.76);
-    box-shadow: 0px 0px 13px 6px rgba(0,0,0,0.76);
+    width: 80%;
+    -webkit-box-shadow: $imgShadow;
+    -moz-box-shadow: $imgShadow;
+    box-shadow: $imgShadow;
+    @include media-s {
+      width: 400px;
+    }
   }
 }
 iframe{

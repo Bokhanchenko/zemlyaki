@@ -1,9 +1,10 @@
 .nav {
+  background-color: $grey;
   &__list {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid #807c7f;
+    border: 1px solid $grey;
     @include media-s {
       flex-flow: row wrap;
       align-content: stretch;
@@ -14,10 +15,10 @@
     border-top: 1px solid;
     border-right: 1px solid;
     border-left: 1px solid;
-    border-color: #686669;
+    border-color: $borderColor;
     list-style: none;
     &:last-child {
-      border-bottom: 1px solid #686669;
+      border-bottom: 1px solid $borderColor;
       @include media-s {
         border-bottom: none;
       }
@@ -36,8 +37,8 @@
     text-align: center;
     padding: 10px 20px;
     text-decoration: none;
-    color: aliceblue;
-    text-shadow: 0 1px 3px #000000;
+    color: $wightTextColor;
+    text-shadow: $textShadow;
     font: {
       family: $font;
       size: 1.2em;
@@ -56,14 +57,14 @@
       padding: 10px 0;
     }
     &--checked {
-      -webkit-box-shadow: inset 0 0 30px 6px rgba(0,0,0,0.75);
-      -moz-box-shadow: inset 0 0 30px 6px rgba(0,0,0,0.75);
-      box-shadow: inset 0 0 30px 6px rgba(0,0,0,0.75);
+      -webkit-box-shadow: $boxShadowChecked;
+      -moz-box-shadow: $boxShadowChecked;
+      box-shadow: $boxShadowChecked;
     }
     &:hover {
-      -webkit-box-shadow: inset 0 0 10px 1px rgba(0,0,0,0.75);
-      -moz-box-shadow: inset 0 0 10px 1px rgba(0,0,0,0.75);
-      box-shadow: inset 0 0 10px 1px rgba(0,0,0,0.75);
+      -webkit-box-shadow: $boxShadowHover;
+      -moz-box-shadow: $boxShadowHover;
+      box-shadow: $boxShadowHover;
     }
   }
   @media print {
