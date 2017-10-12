@@ -187,7 +187,6 @@ let logErr = function( err){
 }
 
 gulp.task( 'html:build', function () {
-
     gulp.src( path.src.html)
         // .pipe(pug())
         .pipe( plumber())
@@ -229,19 +228,17 @@ gulp.task( 'style:build', function () {
         .pipe( reload( { stream: true}));
 });
 
-gulp.task('image:build', function () {
+gulp.task( 'image:build', function () {
     console.log(path.src.img)
     gulp.src(path.src.img)
-        // .pipe( plumber())
+        .pipe( plumber())
         .pipe( rename( (path) => {
-            console.log(path)
             path.dirname = changeCase.lowerCase(path.dirname);
             path.basename = changeCase.lowerCase(path.basename);
             path.extname = changeCase.lowerCase(path.extname);
-            // console.log(path)
         }))
         .pipe( gulp.dest( path.build.img))
-        // .pipe( reload( { stream: true}));
+        .pipe( reload( { stream: true}));
 });
 
 gulp.task('fonts:build', function() {
