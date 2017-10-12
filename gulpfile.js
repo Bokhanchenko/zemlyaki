@@ -1,3 +1,5 @@
+'use strict'
+
 // var gulp = require('gulp');
 // var	partials = require('gulp-partials');
 // var browserSync = require('browser-sync');
@@ -30,27 +32,27 @@
 //     rigger = require('gulp-rigger'),
 //     concat = require('gulp-concat'),
 //     cssnano = require('gulp-cssnano'),
-//     del = require('del'),
+//     // del = require('del'),
 //     uglify = require('gulp-uglify'),
 //     babel = require('gulp-babel'),
 //     imagemin = require('gulp-imagemin'),
 //     concatCss = require('gulp-concat-css'),
 //     pngquant = require('imagemin-pngquant');
 //
-// const paths = {
-//     src: {
-//         html: 'src/**/*.html',
-//         style: 'src/style/style.scss',
-//         js: 'src/js/**/*.js',
-//         img: 'src/img/**/*.*',
-//         fonts: 'src/fonts/**/*.*'
-//     },
+// let paths = {
 //     build: {
 //         html: 'build/',
 //         js: 'build/js/',
-//         style: 'build/css/',
+//         css: 'build/css/',
 //         img: 'build/img/',
 //         fonts: 'build/fonts/'
+//     },
+//     src: {
+//         html: 'src/*.html',
+//         js: 'src/js/**/*.js',
+//         style: 'src/style/*.scss',
+//         img: 'src/img/**/*.+(jpeg|jpg|JPG|png|tiff|webp|svg)',
+//         fonts: 'src/fonts/**/*.*'
 //     },
 //     watch: {
 //         html: 'src/**/*.html',
@@ -59,7 +61,7 @@
 //         img: 'src/img/**/*.*',
 //         fonts: 'src/fonts/**/*.*'
 //     },
-//     clean: '../build'
+//     clean: './dist'
 // };
 //
 // gulp.task('sass', function () {
@@ -71,7 +73,7 @@
 //             cascade: false
 //         }))
 //         .pipe(concatCss('style.css'))
-//         .pipe(gulp.dest(paths.build.style))
+//         .pipe(gulp.dest(paths.build.css))
 //         .pipe(browserSync.reload({stream: true}));
 // });
 //
@@ -122,7 +124,7 @@
 //
 // gulp.task('default', ['server', 'html', 'sass', 'js', 'fonts', 'img', 'watch']);
 
-let gulp = require( 'gulp')
+const gulp = require( 'gulp')
     ,useref = require( 'gulp-useref')
     ,htmlmin = require( 'gulp-htmlmin')
     ,plumber = require( 'gulp-plumber')
@@ -139,7 +141,9 @@ let gulp = require( 'gulp')
     // ,pug = require('gulp-pug')
     ,browserSync = require( 'browser-sync')
     ,babel= require('gulp-babel')
-    ,reload = browserSync.reload;
+    ,reload = browserSync.reload
+    ,changeCase = require('change-case')
+    ,rename = require("gulp-rename");
 
 
 let path = {
@@ -154,17 +158,17 @@ let path = {
         html: 'src/*.html',
         js: 'src/js/**/*.js',
         style: 'src/style/*.scss',
-        img: 'src/img/**/*.+(jpeg|jpg|JPG|png|tiff|webp|svg)',
+        img: 'src/img/**/**',
         fonts: 'src/fonts/**/*.*'
     },
     watch: {
         html: 'src/**/*.html',
         js: 'src/js/**/*.js',
         style: 'src/style/**/*.scss',
-        img: 'src/img/**/*.*',
+        img: 'src/img/**',
         fonts: 'src/fonts/**/*.*'
     },
-    clean: './dist'
+    clean: 'build'
 };
 
 let config = {
@@ -176,7 +180,6 @@ let config = {
     port: 9999,
     logPrefix: "front_log"
 };
-
 
 let logErr = function( err){
     console.warn( err);
@@ -209,7 +212,6 @@ gulp.task( 'js:build', function () {
         .pipe( reload( { stream: true}));
 });
 
-
 gulp.task( 'style:build', function () {
     gulp.src( path.src.style)
         .pipe( plumber())
@@ -227,31 +229,26 @@ gulp.task( 'style:build', function () {
         .pipe( reload( { stream: true}));
 });
 
-
 gulp.task('image:build', function () {
-    gulp.src( path.src.img)
-        .pipe( plumber())
-        // .pipe(gm((gmfile)=> {
-        //
-        //     return gmfile.resize(100, 100);
-        //
-        // }))
-        // .pipe(imageResize({
-        //     width: 1280,
-        //     crop: true,
-        //     upscale: false
-        // }))
+    console.log(path.src.img)
+    gulp.src(path.src.img)
+        // .pipe( plumber())
+        .pipe( rename( (path) => {
+            console.log(path)
+            path.dirname = changeCase.lowerCase(path.dirname);
+            path.basename = changeCase.lowerCase(path.basename);
+            path.extname = changeCase.lowerCase(path.extname);
+            // console.log(path)
+        }))
         .pipe( gulp.dest( path.build.img))
-        .pipe( reload( { stream: true}));
+        // .pipe( reload( { stream: true}));
 });
-
 
 gulp.task('fonts:build', function() {
     gulp.src( path.src.fonts)
         .pipe( plumber())
         .pipe( gulp.dest(path.build.fonts))
 });
-
 
 gulp.task('build', [
     'html:build',
@@ -263,7 +260,6 @@ gulp.task('build', [
 
 
 gulp.task('watch', function(){
-
     watch([path.watch.html], function (event, cb) {
         gulp.start('html:build');
     });
@@ -281,7 +277,6 @@ gulp.task('watch', function(){
     });
 });
 
-
 gulp.task('server', function () {
     browserSync({
         server: {baseDir: path.build.html},
@@ -289,11 +284,9 @@ gulp.task('server', function () {
     });
 });
 
-
 gulp.task('clean', function (cb) {
     rimraf(path.clean, cb);
 });
-
 
 gulp.task('default', ['build', 'server', 'watch']);
 
